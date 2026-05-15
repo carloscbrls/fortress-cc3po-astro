@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+  <!-- Nav -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="28" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#8b5cf6"/><path d="M16 6L8 11v6c0 5.5 3.4 10.7 8 12 4.6-1.3 8-6.5 8-12v-6L16 6zm0 4l4 2.5v4.5c0 3.2-1.7 6.2-4 7.2-2.3-1-4-4-4-7.2v-4.5L16 10z" fill="#0a0a0a"/></svg>
+        <span style="font-weight:700;font-size:18px;color:var(--text);">Fortress</span>
+        <span style="font-size:12px;color:var(--text-dim);margin-left:4px;">by CC3PO</span>
+      </div>
+      <div style="display:flex;gap:24px;align-items:center;font-size:14px;">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#compare">Compare</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://cc3po.com/contact" style="background:var(--accent);color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:13px;">Start Free Trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section style="padding:160px 0 80px;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(139,92,246,0.15),transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:16px;background:var(--accent-dark);margin-bottom:24px;">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="10" y="12" width="4" height="5" rx="1"/></svg>
+      </div>
+      <h1 style="font-size:clamp(48px,8vw,72px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;">
+        Fortress
+      </h1>
+      <p style="font-size:clamp(20px,3vw,28px);color:var(--text-muted);max-width:640px;margin:0 auto 16px;font-weight:500;">
+        Compliance + Security. Your Digital Perimeter, Locked Down.
+      </p>
+      <p style="font-size:16px;color:var(--text-dim);max-width:520px;margin:0 auto 40px;">
+        The average cost of a data breach for small businesses: <strong style="color:#ef4444;">$108K</strong>. Fortress stops breaches before they start.
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://cc3po.com/contact" style="background:var(--accent);color:#fff;padding:16px 36px;border-radius:10px;font-weight:700;font-size:16px;box-shadow:0 0 24px rgba(139,92,246,0.35);">Start Free Trial</a>
+        <a href="#features" style="border:1px solid var(--border);color:var(--text-muted);padding:16px 36px;border-radius:10px;font-weight:600;font-size:16px;">See Features</a>
+      </div>
+      <p style="font-size:13px;color:var(--text-dim);margin-top:16px;">14-day free trial · No credit card required</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:80px 0;">
+    <div class="container">
+      <h2 style="font-size:36px;font-weight:800;text-align:center;margin-bottom:12px;">Everything in Shield, <span style="color:var(--accent);">plus:</span></h2>
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:48px;font-size:17px;">Fortress builds on Shield with daily scans, vulnerability detection, and priority support.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+        {[
+          { icon: '🔍', title: 'Daily Compliance Scans', desc: 'Automated daily scans that catch compliance drift before it becomes a violation. Sleep easy.' },
+          { icon: '🛡️', title: 'Security Vulnerability Scanning', desc: 'Continuous scanning for CVEs, misconfigurations, and attack vectors across your stack.' },
+          { icon: '🔒', title: 'SSL & Header Monitoring', desc: 'Real-time monitoring of certificate expiry, security headers, and TLS configuration.' },
+          { icon: '⚡', title: 'DDoS Protection Setup', desc: 'Cloudflare-grade DDoS protection configured and maintained for your domain.' },
+          { icon: '📧', title: 'Priority Email Support', desc: 'Skip the queue. Your security questions get answered first, within 4 business hours.' },
+          { icon: '📊', title: 'Monthly Compliance Audit Report', desc: 'A detailed monthly report card showing compliance status, improvements, and action items.' },
+        ].map(f => (
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent-dark)'" onmouseout="this.style.borderColor='var(--border)'">
+            <div style="font-size:28px;margin-bottom:12px;">{f.icon}</div>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">{f.title}</h3>
+            <p style="font-size:14px;color:var(--text-muted);line-height:1.6;">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" style="padding:80px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size:36px;font-weight:800;margin-bottom:12px;">Lock it down. <span style="color:var(--accent);">$247/mo.</span></h2>
+      <p style="color:var(--text-muted);font-size:17px;margin-bottom:48px;">Cheaper than one breach. Way cheaper than $108K.</p>
+      <div style="display:inline-block;background:var(--bg-card);border:2px solid var(--accent-dark);border-radius:16px;padding:48px 56px;max-width:480px;width:100%;text-align:center;">
+        <div style="font-size:14px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Fortress</div>
+        <div style="font-size:56px;font-weight:800;line-height:1;">$247<span style="font-size:20px;color:var(--text-muted);font-weight:500;">/mo</span></div>
+        <div style="font-size:14px;color:var(--text-dim);margin:8px 0 32px;">Billed annually: $2,570/yr <span style="color:var(--accent);">($214/mo — save $396)</span></div>
+        <a href="https://cc3po.com/contact" style="display:block;background:var(--accent);color:#fff;padding:16px;border-radius:10px;font-weight:700;font-size:16px;margin-bottom:16px;box-shadow:0 0 24px rgba(139,92,246,0.3);">Start 14-Day Free Trial</a>
+        <div style="font-size:13px;color:var(--text-dim);">No credit card required · Cancel anytime</div>
+        <div style="margin-top:28px;text-align:left;">
+          <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;">What's included:</div>
+          {[
+            'Everything in Shield ($147/mo value)',
+            'Daily compliance scans',
+            'Security vulnerability scanning',
+            'SSL & header monitoring',
+            'DDoS protection setup',
+            'Priority email support (4hr response)',
+            'Monthly compliance audit report',
+          ].map(item => (
+            <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:14px;color:var(--text-muted);">
+              <span style="color:var(--accent);flex-shrink:0;">✓</span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="compare" style="padding:80px 0;">
+    <div class="container">
+      <h2 style="font-size:36px;font-weight:800;text-align:center;margin-bottom:12px;">Choose your perimeter.</h2>
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:48px;font-size:17px;">Shield → Fortress → Citadel. Security scales with you.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border);">
+              <th style="text-align:left;padding:16px;color:var(--text-muted);font-weight:600;">Feature</th>
+              <th style="text-align:center;padding:16px;font-weight:700;color:#3b82f6;">Shield<br/><span style="font-size:13px;font-weight:400;color:var(--text-dim);">$147/mo</span></th>
+              <th style="text-align:center;padding:16px;font-weight:700;color:var(--accent);background:rgba(139,92,246,0.08);border-radius:8px 8px 0 0;">Fortress<br/><span style="font-size:13px;font-weight:400;color:var(--text-dim);">$247/mo</span></th>
+              <th style="text-align:center;padding:16px;font-weight:700;color:#f59e0b;">Citadel<br/><span style="font-size:13px;font-weight:400;color:var(--text-dim);">$497/mo</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['WCAG compliance scanning', '✓', '✓', '✓'],
+              ['Weekly compliance report', '✓', '✓', '✓'],
+              ['Email support (24hr)', '✓', '—', '—'],
+              ['Daily compliance scans', '—', '✓', '✓'],
+              ['Security vulnerability scanning', '—', '✓', '✓'],
+              ['SSL & header monitoring', '—', '✓', '✓'],
+              ['DDoS protection setup', '—', '✓', '✓'],
+              ['Priority email support (4hr)', '—', '✓', '✓'],
+              ['Monthly compliance audit report', '—', '✓', '✓'],
+              ['Penetration testing (quarterly)', '—', '—', '✓'],
+              ['Dedicated security engineer', '—', '—', '✓'],
+              ['Phone support (1hr SLA)', '—', '—', '✓'],
+              ['Incident response retainer', '—', '—', '✓'],
+              ['Custom compliance framework', '—', '—', '✓'],
+            ].map(([feature, shield, fortress, citadel]) => (
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:14px 16px;color:var(--text-muted);">{feature}</td>
+                <td style="text-align:center;padding:14px;color:var(--text-dim);">{shield}</td>
+                <td style="text-align:center;padding:14px;background:rgba(139,92,246,0.04);color:var(--text);font-weight:shield === '✓' || fortress === '✓' ? 600 : 400;">{fortress}</td>
+                <td style="text-align:center;padding:14px;color:var(--text-dim);">{citadel}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:32px;">
+        <a href="https://cc3po.com/contact" style="background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:15px;">Get Fortress Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding:80px 0;">
+    <div class="container" style="max-width:720px;">
+      <h2 style="font-size:36px;font-weight:800;text-align:center;margin-bottom:48px;">Security & Compliance FAQ</h2>
+      {[
+        {
+          q: 'How quickly can Fortress be set up?',
+          a: 'Most Fortress deployments are live within 24 hours. We configure your scans, monitoring, and DDoS protection during onboarding. You\'ll see results from day one.'
+        },
+        {
+          q: 'What does "daily compliance scanning" actually check?',
+          a: 'We scan for WCAG accessibility violations, broken links, missing privacy/Cookie policies, GDPR/CCPA consent issues, and ADA compliance gaps — every single day, not just weekly.'
+        },
+        {
+          q: 'How does the vulnerability scanning work?',
+          a: 'Fortress runs continuous checks against known CVEs, outdated software versions, misconfigured headers, open ports, and common attack vectors. You get alerts the moment a risk is detected.'
+        },
+        {
+          q: 'What happens if a breach occurs despite Fortress?',
+          a: 'Fortress dramatically reduces breach risk, but no system is 100% immune. Our monthly audit reports document your compliance posture — critical for liability protection and insurance claims.'
+        },
+        {
+          q: 'Can I upgrade from Shield to Fortress?',
+          a: 'Absolutely. Upgrading is seamless — we activate the additional Fortress features on your existing account with zero downtime. Your Shield data and history carry over.'
+        },
+      ].map((faq, i) => (
+        <details style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;padding:20px 24px;cursor:pointer;" open={i === 0}>
+          <summary style="font-weight:700;font-size:16px;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            <span>{faq.q}</span>
+            <span style="color:var(--accent);font-size:20px;">+</span>
+          </summary>
+          <p style="margin-top:12px;font-size:14px;color:var(--text-muted);line-height:1.7;">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section style="padding:80px 0;text-align:center;">
+    <div class="container">
+      <div style="background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(139,92,246,0.04));border:1px solid var(--border-accent);border-radius:20px;padding:64px 32px;">
+        <h2 style="font-size:32px;font-weight:800;margin-bottom:12px;">$108K is the average breach cost.</h2>
+        <p style="font-size:18px;color:var(--text-muted);margin-bottom:32px;">Fortress is $247/mo. The math speaks for itself.</p>
+        <a href="https://cc3po.com/contact" style="display:inline-block;background:var(--accent);color:#fff;padding:18px 48px;border-radius:12px;font-weight:700;font-size:18px;box-shadow:0 0 32px rgba(139,92,246,0.4);">Start Free Trial</a>
+        <p style="font-size:13px;color:var(--text-dim);margin-top:16px;">14-day free trial · No credit card · Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="border-top:1px solid var(--border);padding:40px 0;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#8b5cf6"/><path d="M16 6L8 11v6c0 5.5 3.4 10.7 8 12 4.6-1.3 8-6.5 8-12v-6L16 6zm0 4l4 2.5v4.5c0 3.2-1.7 6.2-4 7.2-2.3-1-4-4-4-7.2v-4.5L16 10z" fill="#0a0a0a"/></svg>
+        <span style="font-size:14px;color:var(--text-dim);">Fortress by <a href="https://cc3po.com" style="color:var(--text-muted);">CC3PO</a></span>
+      </div>
+      <div style="display:flex;gap:24px;font-size:13px;">
+        <a href="https://cc3po.com">CC3PO</a>
+        <a href="https://shield.cc3po.com">Shield</a>
+        <a href="https://citadel.cc3po.com">Citadel</a>
+        <a href="https://cc3po.com/contact">Contact</a>
+      </div>
+      <div style="font-size:13px;color:var(--text-dim);">© 2026 CC3PO. All rights reserved.</div>
+    </div>
+  </footer>
+</Layout>

@@ -1,0 +1,49 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = 'Fortress — CC3PO', description = 'Compliance + Security. Your Digital Perimeter, Locked Down.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --bg-card-hover: #161616;
+      --accent: #8b5cf6;
+      --accent-light: #a78bfa;
+      --accent-dark: #6d28d9;
+      --text: #f5f5f5;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --border: #1f1f1f;
+      --border-accent: #8b5cf633;
+      --radius: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  </style>
+</head>
+<body>
+  <slot />
+</body>
+</html>
